@@ -1,6 +1,5 @@
 :root {
-  --primary: rgb(86, 179, 210);
-  --primary-light: rgba(86, 179, 210, 0.4);
+  --primary: 86, 179, 210;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
@@ -17,6 +16,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgb(21, 23, 38);
 }
 
 /* styles only if hover is available */
@@ -38,7 +38,7 @@ body {
   }
 
   .s-icon:hover {
-    background-color: var(--primary);
+    background-color: rgb(var(--primary));
   }
 
   .s-icon:hover i {
@@ -109,14 +109,14 @@ body {
 
 .s-icon i {
   font-size: 20px;
-  color: var(--primary);
+  color: rgb(var(--primary));
   transition: 300ms ease all;
 }
 
 .card-btn {
   display: inline-block;
   transition: 0.2s ease background-color;
-  background-color: var(--primary);
+  background-color: rgb(var(--primary));
   border: none;
   color: #fff;
   text-decoration: none;
@@ -126,5 +126,5 @@ body {
 }
 
 .card-btn:hover {
-  background-color: var(--primary-light);
+  background-color: rgba(var(--primary), 0.4);
 }
