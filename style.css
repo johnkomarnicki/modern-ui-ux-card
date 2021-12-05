@@ -1,5 +1,6 @@
 :root {
-  --primary: 86, 179, 210;
+  --primary: rgb(86, 179, 210);
+  --primary-light: rgba(86, 179, 210, 0.4);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
@@ -32,9 +33,23 @@ body {
   color: #fff;
   padding: 18rem 0 0 0;
   overflow: hidden;
+  transition: 500ms ease transform;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card:hover::after {
+  backdrop-filter: blur(2px);
+}
+
+.card:hover .card-content {
+  transform: translateY(0);
 }
 
 .card::after {
+  transition: 500ms ease backdrop-filter;
   position: absolute;
   top: 0;
   content: "";
@@ -47,6 +62,8 @@ body {
   position: relative;
   z-index: 2;
   padding: 10px;
+  transform: translateY(55%);
+  transition: 500ms ease transform;
 }
 
 .card-title {
@@ -77,7 +94,7 @@ body {
 }
 
 .s-icon:hover {
-  background-color: rgb(var(--primary));
+  background-color: var(--primary);
 }
 
 .s-icon:hover i {
@@ -86,14 +103,14 @@ body {
 
 .s-icon i {
   font-size: 20px;
-  color: rgb(var(--primary));
+  color: var(--primary);
   transition: 300ms ease all;
 }
 
 .card-btn {
   display: inline-block;
   transition: 0.2s ease background-color;
-  background-color: rgb(var(--primary));
+  background-color: var(--primary);
   border: none;
   color: #fff;
   text-decoration: none;
@@ -103,5 +120,5 @@ body {
 }
 
 .card-btn:hover {
-  background-color: rgba(var(--primary), 0.6);
+  background-color: var(--primary-light);
 }
